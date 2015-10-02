@@ -2,7 +2,7 @@
 //  University.swift
 //  CloudEmployeeAssessment
 //
-//  Created by Hybrid Pay Asia on 10/2/15.
+//  Created by Mary Marielle Miranda on 10/2/15.
 //  Copyright © 2015 Mary Marielle Miranda. All rights reserved.
 //
 
