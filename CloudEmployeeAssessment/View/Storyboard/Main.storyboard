@@ -86,7 +86,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="..and ">
                                         <attributes>
-                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="43" name="HelveticaNeue-Thin"/>
                                             <font key="NSOriginalFont" size="35" name="HelveticaNeue-Thin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
@@ -94,7 +94,7 @@
                                     </fragment>
                                     <fragment content="where">
                                         <attributes>
-                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="43" name="HelveticaNeue-Medium"/>
                                             <font key="NSOriginalFont" size="35" name="HelveticaNeue-Thin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
@@ -102,7 +102,7 @@
                                     </fragment>
                                     <fragment content=" do you study?">
                                         <attributes>
-                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="43" name="HelveticaNeue-Thin"/>
                                             <font key="NSOriginalFont" size="35" name="HelveticaNeue-Thin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
@@ -188,7 +188,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="npf-RS-yuF" firstAttribute="top" secondItem="6Ds-9c-7U0" secondAttribute="bottom" id="7cn-d2-HeQ"/>
                             <constraint firstItem="BBu-YZ-oMw" firstAttribute="centerY" secondItem="YHr-eT-RqL" secondAttribute="centerY" id="F90-I8-m9j"/>
@@ -209,79 +209,104 @@
                         <outlet property="btnDone" destination="Eb6-fO-Myw" id="mrw-Ap-nEv"/>
                         <outlet property="txtGraduationYear" destination="x4z-iw-xdc" id="BW7-Jb-YVa"/>
                         <outlet property="txtUniversity" destination="gwQ-KB-pxp" id="WS5-Tu-KMH"/>
-                        <segue destination="pb3-Pn-Y0Y" kind="show" identifier="proceedToUniversitySelection" id="fgr-8E-RSG"/>
+                        <segue destination="ec5-qG-u0q" kind="show" identifier="proceedToUniversitySelection" id="IMY-6h-rMh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgZ-sB-Brq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1043" y="883"/>
+            <point key="canvasLocation" x="1039" y="883"/>
         </scene>
         <!--University Selection Table View Controller-->
-        <scene sceneID="f5W-Uz-QJc">
+        <scene sceneID="5Af-52-BRw">
             <objects>
-                <tableViewController id="pb3-Pn-Y0Y" customClass="UniversitySelectionTableViewController" customModule="CloudEmployeeAssessment" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oCu-Qw-Y24">
+                <viewController id="ec5-qG-u0q" customClass="UniversitySelectionTableViewController" customModule="CloudEmployeeAssessment" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zdi-5R-PiP"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Kx-sG-cMx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YYP-Nr-8GJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search University/College" id="xoP-bW-k8A">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="pb3-Pn-Y0Y" id="Yj3-9p-Jfq"/>
-                            </connections>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="universityCell" textLabel="e1Y-gF-xIg" rowHeight="60" style="IBUITableViewCellStyleDefault" id="n7I-aX-ADM">
-                                <rect key="frame" x="0.0" y="72" width="600" height="60"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n7I-aX-ADM" id="7DB-tI-JHt">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" id="e1Y-gF-xIg">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="59"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="pb3-Pn-Y0Y" id="UdC-f3-kh1"/>
-                            <outlet property="delegate" destination="pb3-Pn-Y0Y" id="RPx-l1-Vp4"/>
-                        </connections>
-                    </tableView>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="ic_search" translatesAutoresizingMaskIntoConstraints="NO" id="C91-dw-JwQ">
+                                <rect key="frame" x="25" y="28" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="ECh-TZ-BE8"/>
+                                    <constraint firstAttribute="height" constant="20" id="Qz6-pm-VL0"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZT-TK-QKE">
+                                <rect key="frame" x="25" y="56" width="550" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="1Ar-fC-gt2"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search University/College" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="fmG-Pd-bCD">
+                                <rect key="frame" x="53" y="28" width="522" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="rlK-1X-Sva"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ec5-qG-u0q" id="5GL-bm-VHu"/>
+                                </connections>
+                            </textField>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jRI-VN-KAl">
+                                <rect key="frame" x="25" y="65" width="550" height="535"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="universityCell" textLabel="8ll-OE-Rfh" style="IBUITableViewCellStyleDefault" id="KeX-rZ-m6H">
+                                        <rect key="frame" x="0.0" y="28" width="550" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KeX-rZ-m6H" id="EXY-WY-Bdd">
+                                            <rect key="frame" x="0.0" y="0.0" width="550" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="4" id="8ll-OE-Rfh">
+                                                    <rect key="frame" x="15" y="0.0" width="520" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ec5-qG-u0q" id="oGh-Tj-CHq"/>
+                                    <outlet property="delegate" destination="ec5-qG-u0q" id="xjQ-Pl-Mma"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jRI-VN-KAl" secondAttribute="trailing" constant="25" id="06F-jV-AaN"/>
+                            <constraint firstItem="jRI-VN-KAl" firstAttribute="leading" secondItem="YYP-Nr-8GJ" secondAttribute="leading" constant="25" id="9S1-ad-WMM"/>
+                            <constraint firstItem="C91-dw-JwQ" firstAttribute="leading" secondItem="YYP-Nr-8GJ" secondAttribute="leading" constant="25" id="FiF-Ug-Fe2"/>
+                            <constraint firstAttribute="trailing" secondItem="LZT-TK-QKE" secondAttribute="trailing" constant="25" id="HNp-fZ-uc9"/>
+                            <constraint firstItem="C91-dw-JwQ" firstAttribute="top" secondItem="zdi-5R-PiP" secondAttribute="bottom" constant="8" id="Nqo-fo-ZgC"/>
+                            <constraint firstAttribute="trailing" secondItem="fmG-Pd-bCD" secondAttribute="trailing" constant="25" id="QVv-Y7-T0m"/>
+                            <constraint firstItem="LZT-TK-QKE" firstAttribute="leading" secondItem="YYP-Nr-8GJ" secondAttribute="leading" constant="25" id="UrE-v7-dxA"/>
+                            <constraint firstItem="fmG-Pd-bCD" firstAttribute="top" secondItem="zdi-5R-PiP" secondAttribute="bottom" constant="8" id="buR-uZ-z1g"/>
+                            <constraint firstItem="fmG-Pd-bCD" firstAttribute="leading" secondItem="C91-dw-JwQ" secondAttribute="trailing" constant="8" id="cFT-9d-aix"/>
+                            <constraint firstItem="9Kx-sG-cMx" firstAttribute="top" secondItem="jRI-VN-KAl" secondAttribute="bottom" id="ncM-cn-z7y"/>
+                            <constraint firstItem="LZT-TK-QKE" firstAttribute="top" secondItem="fmG-Pd-bCD" secondAttribute="bottom" constant="8" id="pzc-0F-HYt"/>
+                            <constraint firstItem="jRI-VN-KAl" firstAttribute="top" secondItem="LZT-TK-QKE" secondAttribute="bottom" constant="8" id="tPb-en-Bua"/>
+                        </constraints>
+                    </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="searchBarUniversity" destination="xoP-bW-k8A" id="jJZ-uX-6yc"/>
-                        <outlet property="searchDisplayController" destination="Zav-Mn-2y5" id="faK-ZH-cla"/>
+                        <outlet property="tableView" destination="jRI-VN-KAl" id="cdh-oC-Byp"/>
+                        <outlet property="txtSearch" destination="fmG-Pd-bCD" id="pG0-Ot-4OM"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wA2-gj-Qh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="46S-mh-gPV">
-                    <connections>
-                        <outlet property="delegate" destination="pb3-Pn-Y0Y" id="BFw-W1-uP9"/>
-                        <outlet property="searchContentsController" destination="pb3-Pn-Y0Y" id="fCW-wo-hOk"/>
-                        <outlet property="searchResultsDataSource" destination="pb3-Pn-Y0Y" id="G4L-Aa-0Mo"/>
-                        <outlet property="searchResultsDelegate" destination="pb3-Pn-Y0Y" id="Wbh-nI-62H"/>
-                    </connections>
-                </searchDisplayController>
-                <searchDisplayController id="Zav-Mn-2y5">
-                    <connections>
-                        <outlet property="delegate" destination="pb3-Pn-Y0Y" id="ysB-Pn-WAE"/>
-                        <outlet property="searchBar" destination="xoP-bW-k8A" id="OAn-Ie-V2g"/>
-                        <outlet property="searchContentsController" destination="pb3-Pn-Y0Y" id="nwN-o7-4P4"/>
-                        <outlet property="searchResultsDataSource" destination="pb3-Pn-Y0Y" id="Hme-nP-NIr"/>
-                        <outlet property="searchResultsDelegate" destination="pb3-Pn-Y0Y" id="Ec1-ZP-GaN"/>
-                    </connections>
-                </searchDisplayController>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1NK-Z2-rSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1759" y="883"/>
+            <point key="canvasLocation" x="1752" y="883"/>
         </scene>
     </scenes>
     <resources>

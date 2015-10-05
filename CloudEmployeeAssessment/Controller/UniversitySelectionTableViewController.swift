@@ -12,11 +12,13 @@ protocol UniversitySelectionTableViewControllerDelegate {
     func didSelectUniversity(university: University) -> Void
 }
 
-class UniversitySelectionTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
+class UniversitySelectionTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate { //UISearchBarDelegate, UISearchDisplayDelegate {
 
     //MARK: - Properties
     //MARK: IBOutlet
-    @IBOutlet weak var searchBarUniversity: UISearchBar!
+    //@IBOutlet weak var searchBarUniversity: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var txtSearch: UITextField!
     
     //MARK: Public
     var delegate: UniversitySelectionTableViewControllerDelegate?
@@ -69,7 +71,6 @@ class UniversitySelectionTableViewController: UITableViewController, UISearchBar
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.separatorStyle = .None;
         self.arrFilteredUniversities = self.arrRawUniversities
     }
 
@@ -83,30 +84,22 @@ class UniversitySelectionTableViewController: UITableViewController, UISearchBar
     Function used to filter data of table view depending on the key entered by user on the Search Bar
     */
     private func filterTableViewWithKey(key: String) -> Void {
-        self.searchKey = key
-        
         let predicate = NSPredicate(format: "SELF.universityName CONTAINS[c] %@", key)
         self.arrFilteredUniversities = NSMutableArray(array: self.arrRawUniversities.filteredArrayUsingPredicate(predicate))
+        
+        self.tableView.reloadData()
     }
-
+    
     //MARK: - UITableView Data Source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView != self.searchDisplayController!.searchResultsTableView {
-            self.arrFilteredUniversities = self.arrRawUniversities
-        }
-        
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.arrFilteredUniversities.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if tableView != self.searchDisplayController!.searchResultsTableView {
-            self.arrFilteredUniversities = self.arrRawUniversities
-        }
-        
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("universityCell", forIndexPath: indexPath)
 
         let university = self.arrFilteredUniversities[indexPath.row]
@@ -137,19 +130,33 @@ class UniversitySelectionTableViewController: UITableViewController, UISearchBar
         return cell
     }
     
-    //MARK - UISearchDisplayController Delegate
-    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
-        self.filterTableViewWithKey(searchString!)
-        return true
-    }
-    
     //MARK: - UITableView Delegate
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let university = self.arrFilteredUniversities[indexPath.row] as! University
         self.delegate!.didSelectUniversity(university)
         
         self.navigationController!.popViewControllerAnimated(true)
+    }
+    
+    //MARK: - UITextField Delegate
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if string == "" {
+            //this is backspace, remove one character in the searchKey
+            searchKey = searchKey.substringToIndex(searchKey.endIndex.predecessor())
+        } else {
+            searchKey = textField.text! + string
+        }
+        
+        //now filter
+        if searchKey.characters.count >= 2 {
+            self.tableView.hidden = false
+            self.filterTableViewWithKey(searchKey)
+        } else {
+            self.tableView.hidden = true
+        }
+        
+        return true
     }
 }
